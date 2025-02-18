@@ -1,17 +1,40 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+<app-header name="Лабораторна робота №1"></app-header>
+<ion-content [fullscreen]="true" color="primary">
+  <ion-card color="tertiary">
+    <ion-card-header color="success">
+      <ion-card-title>Завдання №2</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        На заданому проміжку чисел [a, b] знайдіть кількість чисел, які при діленні на 6 дають в остачі 3. Потрібно вивести як самі числа так і результати обрахунку.
+      </p>
+      <ion-item color="light">
+        <ion-input 
+          label="Перше число"
+          lablePlacement="stacked"
+          type="number"
+          id="a"
+          value="1"
+          #Inputa
+        ></ion-input>
+      </ion-item>
+      <ion-item color="light">
+        <ion-input
+          label="Друге число"
+          lablePlacement="stacked"
+          type="number"
+          id="b"
+          value="2"
+          #Inputb
+        ></ion-input>
+      </ion-item>
+      <ion-button
+        expand="block"
+        (click)="calculate(Inputa.value, Inputb.value)"
+      >Розрахунок</ion-button>
+      <ion-item color="light">
+        <p [innerHTML]="resultText"></p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
