@@ -50,19 +50,19 @@ export class Tab3Page {
     try{
       let n = parseFloat(n1);
       if(isNaN(n)==true){
-        throw new Error ('Parameter is not a number');   
+        throw new Error ('Параметри не є числами!');   
       }
       if (n<=0){
-        throw new Error('Parameter less than zero')
+        throw new Error('Параметри менше 0')
       }
       
       this.a = Array(n);
-      console.log('Array created');
+      console.log('Створений масив');
       
       for (let i = 0; i < n; i++) {
         this.a[i] = Array(n);
         for (let j = 0; j < n; j++) {
-          let aa: number = (Math.random() * 20 - 10); 
+          let aa: number = (Math.random() * 100 - 50); 
           this.a[i][j] = parseInt(aa.toFixed(2));
         }  
       }
@@ -74,7 +74,7 @@ export class Tab3Page {
   getColor(i:number, j:number, b:number){
     
     if (i == j && b % 2 === 0) {
-      return 'lightgreen';  
+      return 'lightpink';  
     }
     return 'white'; 
   }

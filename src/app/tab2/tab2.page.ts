@@ -36,34 +36,28 @@ import { HeaderComponent } from '../header/header.component';
 
 export class Tab2Page {
   result: number[] = [];
-  resultText: string = '';  // Текст для результату
+  resultText: string = '';  
 
   calculate(a1: any, b1: any) {
     try {
-      // Конвертація введених значень у числа
       let a = parseInt(a1);
       let b = parseInt(b1);
 
-      // Валідація введених значень
       if (isNaN(a) || isNaN(b)) {
-        throw new Error("Parameter is not a number!");
+        throw new Error("Параметри не є числами!");
       }
 
-      // Ініціалізуємо масив для зберігання результатів
       this.result = [];
 
-      // Проходимо по всіх числах в проміжку від a до b
       for (let i = a; i <= b; i++) {
-        // Перевіряємо чи залишок від ділення на 6 дорівнює 3
         if (i % 6 === 3) {
-          this.result.push(i); // Додаємо число в результат
+          this.result.push(i); 
         }
       }
 
-      // Формуємо текст для результату
       if (this.result.length > 0) {
         this.resultText = this.result.map(num => {
-          let integerPart = Math.floor(num / 6);  // Отримуємо цілу частину числа
+          let integerPart = Math.floor(num / 6);  
           return `<li>${num} при діленні на 6 дає залишок 3, ціла частина від ділення ${integerPart}</li>`;
         }).join('');
         
@@ -72,7 +66,7 @@ export class Tab2Page {
         this.resultText = 'Немає чисел, які задовольняють умову.';
       }
     } catch (error) {
-      this.result = []; // Якщо сталася помилка, очищуємо результат
+      this.result = []; 
       this.resultText = 'Сталася помилка';
       console.log(error);
     }

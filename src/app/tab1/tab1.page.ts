@@ -41,38 +41,34 @@ export class Tab1Page {
 
   calculate(a1: any, b1: any, c1: any) {
     try {
-      // Конвертація введених значень у числа
+ 
       let a = parseFloat(a1);
       let b = parseFloat(b1);
       let c = parseFloat(c1);
 
-      // Валідація введених значень
       if (isNaN(a) || isNaN(b) || isNaN(c)) {
-        throw new Error("Parameter is not a number!");
+        throw new Error("Параметри не є числами!");
       }
 
-      // Умова: якщо всі числа непарні
+      // Умова: якщо всі числа непарні (3*3*3)
       if (a % 2 !== 0 && b % 2 !== 0 && c % 2 !== 0) {
-        this.d = a * b * c; // Обчислюємо добуток
+        this.d = a * b * c; 
       } else {
-        // Обчислюємо суму
-        let sum = a + b + c;
-
-        // Обчислюємо суму цифр суми
+        let sum = a + b + c; // 3+3+6=12
+        // Обчислення суми цифр суми чисел (1+2=3 непарне)
         let sumOfDigits = sum
           .toString()
           .split("")
           .reduce((acc, digit) => acc + parseInt(digit, 10), 0);
-
-        // Якщо сума цифр непарна
+        // Якщо сума цифр непарна, обчислюється куб суми чисел (12^3)
         if (sumOfDigits % 2 !== 0) {
-          this.d = Math.pow(sum, 3); // Обчислюємо куб суми
+          this.d = Math.pow(sum, 3); 
         } else {
-          this.d = 0; // Якщо жодна умова не виконується
+          this.d = 0; 
         }
       }
     } catch (error) {
-      this.d = 0; // У випадку помилки
+      this.d = 0; 
       console.log(error);
     }
   }

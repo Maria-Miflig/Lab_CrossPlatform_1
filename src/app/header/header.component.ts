@@ -5,6 +5,7 @@ import {
   IonTitle, 
   IonContent, 
   IonButtons, 
+  IonMenuButton
 } from '@ionic/angular/standalone'; 
 
 @Component({ 
@@ -12,7 +13,7 @@ import {
   templateUrl: './header.component.html', 
   styleUrls: ['./header.component.scss'], 
   standalone: true, 
-  imports: [IonButtons, IonHeader, IonToolbar, IonTitle, IonContent], 
+  imports: [IonButtons, IonHeader, IonToolbar, IonTitle, IonContent, IonMenuButton], 
   })
 
 export class HeaderComponent implements OnInit { 
