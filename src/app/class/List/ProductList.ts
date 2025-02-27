@@ -6,7 +6,7 @@ export class ProductList {
   addProduct(p: Product) {
     this.products.push(p);
   }
-
+  // підрахунок загальної кількості товарів у кожній категорії
   getCategoryStock(): { category: string; totalStock: number }[] {
     const categoryStockMap = this.products.reduce((acc, product) => {
       acc[product.category] = (acc[product.category] || 0) + product.stock;

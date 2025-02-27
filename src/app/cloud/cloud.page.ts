@@ -50,14 +50,14 @@ export class CloudPage implements OnInit {
 
   @ViewChild('lineCanvas') private lineCanvas?: ElementRef;
   productList = new ProductList();
-  dataURL = 'https://api.jsonbin.io/v3/b/67bc8337acd3cb34a8eefd9f'; // Updated URL
+  dataURL = 'https://api.jsonbin.io/v3/b/67bc8337acd3cb34a8eefd9f'; 
   loading: boolean = true;
   lineChart: any;
 
-  // Змінна для зберігання категорії, яку вибрано для фільтрації
+  // зберігання категорії, яку вибрано для фільтрації
   selectedCategory: string = 'All';
 
-  // Змінна для зберігання групованих товарів
+  //  зберігання групованих товарів
   groupedProducts: { [key: string]: Product[] } = {};
 
   constructor(
@@ -85,7 +85,7 @@ export class CloudPage implements OnInit {
           this.productList.addProduct(newProduct);
         });
 
-        // Викликаємо функцію для групування товарів за категоріями
+        //  групування товарів
         this.groupedProducts = this.getProductsGroupedByCategory();
         this.lineChartMethod();
         this.loading = false;
@@ -96,7 +96,7 @@ export class CloudPage implements OnInit {
       });
   }
 
-  // Функція для групування товарів за категоріями
+  //  групування товарів за категоріями
   getProductsGroupedByCategory() {
     return this.productList.products.reduce((acc: { [key: string]: Product[] }, product) => {
       const category = product.category || 'Uncategorized'; 
@@ -108,7 +108,7 @@ export class CloudPage implements OnInit {
     }, {});
   }
 
-  // Отримання унікальних категорій для динамічного фільтру
+  // отримання унікальних категорій для фільтру
   getCategories() {
     return ['All', ...Object.keys(this.groupedProducts)];
   }
