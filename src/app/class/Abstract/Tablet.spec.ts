@@ -1,6 +1,6 @@
 import { Tablet } from "./Tablet";
 
-describe('Tablet testing', () => {
+describe('Тестування Tablet', () => {
     let tablet: Tablet;
     beforeEach(() => {
         tablet = new Tablet("Apple iPad", 100, 0.5, 10);

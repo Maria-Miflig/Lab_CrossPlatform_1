@@ -1,9 +1,9 @@
 import { Smartwatch } from "./Smartwatch";
 
-describe('Smartwatch testing', () => {
+describe('Тестування Smartwatch', () => {
     let smartwatch: Smartwatch;
     beforeEach(() => {
-        smartwatch = new Smartwatch("Apple Watch", 300, 0.2, "Пульсометр, акселерометр, гіроскоп");
+        smartwatch = new Smartwatch("Apple Watch", 300, 0.2, "Pulsometer");
     });
     it('Створення екземпляра класу', () => {
         expect(smartwatch).toBeTruthy();
@@ -13,7 +13,7 @@ describe('Smartwatch testing', () => {
     });
     it('Перевірка методу displayInfo', () => {
         expect(smartwatch.displayInfo()).toBe(
-            'Бренд:Apple Watch<br>Ємність батареї:300<br>Вага:0.2<br>Сенсори:Пульсометр, акселерометр, гіроскоп'
+            'Бренд:Apple Watch<br>Ємність батареї:300<br>Вага:0.2<br>Сенсори:Pulsometer'
         );
     });
 });

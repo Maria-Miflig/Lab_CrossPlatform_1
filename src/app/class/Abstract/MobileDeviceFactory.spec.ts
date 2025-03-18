@@ -3,7 +3,7 @@ import { Smartphone } from './Smartphone';
 import { Tablet } from './Tablet';
 import { Smartwatch } from './Smartwatch';
 
-describe('MobileDeviceFactory testing', () => {
+describe('Тестування MobileDeviceFactory', () => {
     
     it('Створення смартфона', () => {
         const device = MobileDeviceFactory.getMobileDevice("Smartphone", "Samsung", 4000, 0.2, 108);
@@ -24,17 +24,17 @@ describe('MobileDeviceFactory testing', () => {
     });
 
     it('Створення смартвотча', () => {
-        const device = MobileDeviceFactory.getMobileDevice("Smartwatch", "Apple Watch", 300, 0.1, "Пульсометр, гіроскоп");
+        const device = MobileDeviceFactory.getMobileDevice("Smartwatch", "Apple Watch", 300, 0.1, "Pulsometer");
         expect(device).toBeInstanceOf(Smartwatch);
         expect(device.brand).toBe("Apple Watch");
         expect(device.batteryCapacity).toBe(300);
         expect(device.weight).toBe(0.1);
-        expect((device as Smartwatch).sensors).toBe("Пульсометр, гіроскоп");
+        expect((device as Smartwatch).sensors).toBe("Pulsometer");
     });
 
     it('Спроба створити невідомий пристрій', () => {
         expect(() => MobileDeviceFactory.getMobileDevice("UnknownDevice", "BrandX", 1000, 0.3, "Extra"))
-            .toThrow(new Error('Невідомий девайс'));
+            .toThrow(new Error('Unknown device'));
     });
 
 });

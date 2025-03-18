@@ -20,8 +20,8 @@ export class MobileDeviceFactory {
         } else if (type == 'Smartwatch') {
             return new Smartwatch(brand, batteryCapacity, weight, extraFeature);
         } else {
-            console.error('Невідомий девайс:', type); 
-            throw new Error('Невідомий девайс');
+            console.error('Unknown device:', type); 
+            throw new Error('Unknown device');
         }
     }
 }
