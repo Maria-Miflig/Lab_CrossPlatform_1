@@ -1,13 +1,13 @@
 import { MobileDevice } from "./MobileDevice";
-export class Smartphone extends MobileDevice {
+export class Smartwatch extends MobileDevice {
     constructor(
         brand: string,
         batteryCapacity: number,
         weight: number,
-        public cameraResolution: number
+        public sensors: string
     ) {
         super(brand, batteryCapacity, weight);
-        if (cameraResolution <= 0) throw new Error('Camera resolution must be positive');
+        if (!sensors) throw new Error('Smartwatch must have sensors');
     }
 
     override displayInfo(): string {
@@ -21,8 +21,8 @@ export class Smartphone extends MobileDevice {
             'Вага:'+
             this.weight+
             '<br>'+
-            'Роздільна здатність камери:'+
-            this.cameraResolution
+            'Сенсори:'+
+            this.sensors
         );
 
     }

@@ -1,9 +1,9 @@
 import { MobileDevice } from "./MobileDevice";
 export class Tablet extends MobileDevice {
     constructor(
-        override brand: string,
-        override batteryCapacity: number,
-        override weight: number,
+        brand: string,
+        batteryCapacity: number,
+        weight: number,
         public screenSize: number
     ) {
         super(brand, batteryCapacity, weight);
